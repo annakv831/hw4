@@ -1,23 +1,14 @@
-function greeting (){
-    let nameUser = prompt("Как вас зовут?");
-    let ageUser =+prompt("Сколько вам лет?");
-    if(
-        !ageUser
-        || !nameUser
-        || typeof ageUser !=="number"
-        
-      ){
-            alert("Данные неверны");
-            return;  
+function showPrimes(n,m){
+ metka:for(let i=n; i<=m; i++){
+        for(let j=2; j<i; j++){
+            if(i%j==0) continue metka;
+
         }
-        
+        console.log(i);
+    }
 
-    else if (ageUser>30){
-        alert("Здравствуйте, "+nameUser+"!");
-    }
-    else {
-        alert("Привет, "+nameUser+"!");
-    }
 }
+const startNumber = +prompt("Enter number:");
+const finishNumber = +prompt("Enter number:");
 
-greeting()
+showPrimes(startNumber, finishNumber);

@@ -4,10 +4,11 @@ const PASSWORD = "qwer";
 const authorize = () =>{
     let userPassword;
     let userLogin;
+    let counter=3;
     
-    
-    for(let i=3; i>0; i--){
+    do{
         userLogin = prompt("Ваш логин:");
+        
         if(!userLogin){
             alert("Введите логин:");
             continue;
@@ -20,19 +21,19 @@ const authorize = () =>{
         }
         
         if(userPassword !== PASSWORD || userLogin !== LOGIN){
-            let counter=i-1;
-            alert("Данные не верны! У вас осталось " +counter+ " попытки ввести правильно логин и пароль");
+            counter--;
+            alert("Данные неверны!");
+            alert("У вас осталось " +counter+ " попытки ввести правильно логин и пароль");
+            continue;
+
         } else {
             alert("Welcome!");
-            break;
         }
-     
-    }
-  
+        break;
+      
+    } while(counter!==0);
+    
+    
+
 };
 authorize();
-
-
-
-
-
